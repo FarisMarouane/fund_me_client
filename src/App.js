@@ -18,8 +18,6 @@ function App() {
   const [showNotification, setShowNotification] = useState(false);
   const { active, account, activate, deactivate } = useWeb3React();
 
-  console.log('account', account);
-
   async function connect() {
     try {
       await activate(injected);
@@ -87,7 +85,7 @@ function App() {
             <div className="w-72">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-lg font-bold mb-2"
-                for="name"
+                htmlFor="name"
               >
                 Fund campaign duration (in minutes):{' '}
               </label>
@@ -102,7 +100,7 @@ function App() {
             <div className="">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-lg font-bold mb-2"
-                for="email"
+                htmlFor="email"
               >
                 Wallet Address:
               </label>
@@ -110,7 +108,7 @@ function App() {
                 type="text"
                 name="address"
                 id="address"
-                value={active ? account : ''}
+                defaultValue={active ? account : ''}
                 required
                 className="appearance-none block w-max bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 focus:outline-none focus:bg-white"
               />
